@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="16dp"
+    android:layout_marginRight="16dp">
+
+    <TextView
+        android:id="@+id/state"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1.2"
+        android:fontFamily="@font/source_code_pro"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="State/UT"
+        android:textColor="#242833"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/confirmed"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/source_code_pro"
+        android:gravity="end"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Confirmed"
+        android:textAlignment="textEnd"
+        android:textColor="#EF6373"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/recovered"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/source_code_pro"
+        android:gravity="end"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Recovered"
+        android:textAlignment="textEnd"
+        android:textColor="#259996"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/deceased"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/source_code_pro"
+        android:gravity="end"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:text="Deceased"
+        android:textAlignment="textEnd"
+        android:textColor="#242833"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+</LinearLayout>

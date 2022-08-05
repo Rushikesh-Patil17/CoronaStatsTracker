@@ -1,0 +1,518 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nested_view"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card-view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fadingEdgeLength="0dp"
+    android:fillViewport="true"
+    android:overScrollMode="ifContentScrolls"
+    android:scrollbars="none"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:paddingBottom="?attr/actionBarSize" />
+
+        <LinearLayout
+            android:id="@+id/no_con_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingBottom="?attr/actionBarSize"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+
+            <TextView
+                android:id="@+id/text_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableStart="@drawable/ic_error"
+                android:drawableLeft="@drawable/ic_error"
+                android:drawablePadding="10dp"
+                android:text="No Connection"
+                android:textAlignment="center"
+                android:textColor="#242833"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Button
+                android:id="@+id/refresh_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_view"
+                android:layout_gravity="center"
+                android:layout_marginTop="30dp"
+                android:text="Retry" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="#0155B7"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/last_updated"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginRight="16dp"
+                    android:fontFamily="@font/source_code_pro"
+                    android:textAlignment="center"
+                    android:textColor="#fff"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:src="@drawable/ic_bacteria" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="-93dp"
+                    android:src="@drawable/ic_bacteria_small" />
+            </LinearLayout>
+
+            <androidx.cardview.widget.CardView
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="-60dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="5dp"
+                card-view:cardCornerRadius="10dp"
+                card-view:cardElevation="16dp"
+                card-view:contentPaddingLeft="12dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    tools:context=".MainActivity">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:fontFamily="@font/source_code_pro"
+                        android:text="Across India"
+                        android:textColor="#242833"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/confirmed"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:text="Confirmed"
+                            android:textAlignment="textStart"
+                            android:textColor="#242833"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/recovered"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:text="Recovered"
+                            android:textAlignment="textStart"
+                            android:textColor="#242833"
+                            android:textStyle="bold" />
+
+                        <TextView
+                            android:id="@+id/deceased"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:text="Deceased"
+                            android:textAlignment="textStart"
+                            android:textColor="#242833"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/confirmed_cases"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="textStart"
+                            android:textColor="#EF6373"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/recovered_cases"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="textStart"
+                            android:textColor="#259996"
+                            android:textSize="16sp" />
+
+                        <TextView
+                            android:id="@+id/deceased_cases"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="10dp"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:fontFamily="@font/source_code_pro"
+                            android:gravity="start"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:textAlignment="textStart"
+                            android:textColor="#242833"
+                            android:textSize="16sp" />
+
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="12dp"
+                        android:background="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:id="@+id/state_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:context=".MainActivity">
+
+                        <TextView
+                            android:id="@+id/state_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/source_code_pro"
+                            android:textColor="#242833"
+                            android:textSize="20sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Confirmed"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Recovered"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Deceased"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/confirmed_cases_mh"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#EF6373"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/recovered_cases_mh"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#259996"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/deceased_cases_mh"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <View
+                        android:id="@+id/divider1"
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="12dp"
+                        android:layout_gravity="center_horizontal"
+                        android:background="@android:color/darker_gray" />
+
+                    <LinearLayout
+                        android:id="@+id/reassigned_data"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        tools:context=".MainActivity">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:fontFamily="@font/source_code_pro"
+                            android:textColor="#242833"
+                            android:text="Cases being reassigned to states"
+                            android:textSize="17sp"
+                            android:textStyle="bold" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Confirmed"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Recovered"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:text="Deceased"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginStart="10dp"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:id="@+id/confirmed_cases_reassigned"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#EF6373"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/recovered_cases_reassigned"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#259996"
+                                android:textSize="16sp" />
+
+                            <TextView
+                                android:id="@+id/deceased_cases_reassigned"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_marginEnd="10dp"
+                                android:layout_marginRight="10dp"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/source_code_pro"
+                                android:gravity="start"
+                                android:paddingTop="16dp"
+                                android:paddingBottom="16dp"
+                                android:textAlignment="textStart"
+                                android:textColor="#242833"
+                                android:textSize="16sp" />
+
+                        </LinearLayout>
+                    </LinearLayout>
+                </LinearLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="16dp"
+                android:layout_marginBottom="64dp"
+                card-view:cardCornerRadius="10dp"
+                card-view:cardElevation="16dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:fontFamily="@font/source_code_pro"
+                        android:paddingLeft="16dp"
+                        android:text="All States/UT Data"
+                        android:textColor="#242833"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <com.example.coronastatstracker.NonScrollableListView
+                        android:id="@+id/list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:clickable="false"
+                        android:listSelector="@android:color/transparent"
+                        android:longClickable="false" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </LinearLayout>
+
+    </FrameLayout>
+
+</androidx.core.widget.NestedScrollView>
